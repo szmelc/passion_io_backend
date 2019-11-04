@@ -9,6 +9,8 @@ gem 'rails', '~> 6.0.0'
 
 gem 'devise'
 gem 'grape'
+gem 'grape-swagger'
+gem 'grape-swagger-rails'
 gem 'jbuilder', '~> 2.7'
 gem 'sass-rails', '~> 5'
 gem 'turbolinks', '~> 5'
