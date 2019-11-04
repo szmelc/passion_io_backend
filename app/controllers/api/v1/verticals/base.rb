@@ -5,6 +5,8 @@ module API
     module Verticals
       class Base < API::V1::Base
         resource :verticals do
+          before { authenticate_user! }
+
           mount Index
         end
       end
