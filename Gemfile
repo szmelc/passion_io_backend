@@ -8,6 +8,7 @@ gem 'puma', '~> 3.11'
 gem 'rails', '~> 6.0.0'
 
 gem 'devise'
+gem 'doorkeeper'
 gem 'grape'
 gem 'grape-swagger'
 gem 'grape-swagger-rails'
