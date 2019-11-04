@@ -23,6 +23,10 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+group :test do
+  gem 'shoulda-matchers'
+end
+
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
