@@ -7,6 +7,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 6.0.0'
 
+gem 'grape'
 gem 'jbuilder', '~> 2.7'
 gem 'sass-rails', '~> 5'
 gem 'turbolinks', '~> 5'
