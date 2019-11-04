@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates_presence_of :nick
+  validates_presence_of :display_name
 
   has_many :courses, dependent: :destroy, class_name: 'Course', foreign_key: 'author_id'
 end
