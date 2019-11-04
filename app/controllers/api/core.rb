@@ -4,6 +4,7 @@ module API
   class Core < Grape::API
     prefix :api
     format :json
+    include Grape::Kaminari
 
     helpers API::Helpers::AuthHelpers
 
