@@ -31,3 +31,5 @@
 
 en:
   hello: "Hello world"
+  errors:
+    unique_name_error: ": there already is a %{model} with the same name"
