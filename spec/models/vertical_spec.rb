@@ -14,7 +14,7 @@ RSpec.describe Vertical, type: :model do
 
         it 'does not allow to create vertical with the same name as existing category', :aggregate_failures do
           expect(vertical).not_to be_valid
-          expect(vertical.errors.messages[:name]).to include(": there already is a category with the same name")
+          expect(vertical.errors.messages[:name]).to include("there already is a category with the same name")
         end
       end
     end

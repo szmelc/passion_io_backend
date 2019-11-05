@@ -5,6 +5,8 @@ module API
     class Base < Core
       version 'v1', using: :path
 
+      mount Categories::Base
+      mount Courses::Base
       mount Verticals::Base
     end
   end

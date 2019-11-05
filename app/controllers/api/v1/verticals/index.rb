@@ -7,7 +7,9 @@ module API
         desc 'Return list of verticals'
         paginate per_page: 10, max_per_page: 30, offset: false
         get do
-          paginate(Vertical.all)
+          authorize Vertical, :index?
+
+          paginate(Vertical.includes(:categories).all)
         end
       end
     end

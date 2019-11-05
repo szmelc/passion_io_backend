@@ -4,9 +4,13 @@ module API
   class Core < Grape::API
     prefix :api
     format :json
+    include ErrorHandlers
     include Grape::Kaminari
+    formatter :json, Grape::Formatter::ActiveModelSerializers
 
     helpers API::Helpers::AuthHelpers
+    helpers API::Helpers::ResponseHelpers
+    helpers Pundit
 
     mount API::V1::Base
 

@@ -32,4 +32,9 @@
 en:
   hello: "Hello world"
   errors:
-    unique_name_error: ": there already is a %{model} with the same name"
+    unique_name_error: "there already is a %{model} with the same name"
+  policy:
+    errors:
+      forbidden: "Forbidden"
+      record_owner: "You need to be the owner of this record"
+      user_authenticated: "You need to be authenticated"
