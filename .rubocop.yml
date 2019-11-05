@@ -1,0 +1,68 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'vendor/**/*'
+    - 'db/schema.rb'
+    - 'node_modules/**/*'
+  Include:
+    - '**/*.rb'
+    - '**/*.rake'
+    - '**/Gemfile'
+    - '**/Rakefile'
+    - 'db/seeds.rb'
+  TargetRubyVersion: 2.6.3
+Metrics/BlockLength:
+  Enabled: false
+Metrics/LineLength:
+  Max: 120
+  Exclude:
+    - 'config/**/*'
+    - 'spec/**/*'
+Metrics/ModuleLength:
+  Enabled: false
+Rails/InverseOf:
+  Enabled: false
+Rails:
+  Enabled: true
+  Exclude:
+    - 'spec/**/*'
+Style/Documentation:
+  Enabled: false
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*'
+Naming/UncommunicativeMethodParamName:
+  Exclude:
+    - 'spec/**/*'
+Metrics/AbcSize:
+  Max: 20
+Metrics/MethodLength:
+  Max: 20
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - test
+    - staging
+RSpec/NamedSubject:
+  Enabled: false
+RSpec/NotToNot:
+  EnforcedStyle: not_to
+RSpec/LetSetup:
+  Enabled: false
+RSpec/ExampleLength:
+  Max: 25
+RSpec/NestedGroups:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false
+RSpec/ExpectChange:
+  EnforcedStyle: block
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+RSpec/ContextWording:
+  Enabled: true

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class NameValidator < ActiveModel::Validator
   def validate(record)
     if record.is_a?(Category)

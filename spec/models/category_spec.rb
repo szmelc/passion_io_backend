@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
@@ -18,7 +20,7 @@ RSpec.describe Category, type: :model do
 
         it 'does not allow to create category with the same name as existing vertical', :aggregate_failures do
           expect(category).not_to be_valid
-          expect(category.errors.messages[:name]).to include("there already is a vertical with the same name")
+          expect(category.errors.messages[:name]).to include('there already is a vertical with the same name')
         end
       end
     end

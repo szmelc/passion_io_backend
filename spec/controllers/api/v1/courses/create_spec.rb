@@ -8,7 +8,7 @@ RSpec.describe API::V1::Courses::Create, type: :request do
   describe 'POST /api/v1/courses' do
     subject { post '/api/v1/courses', params: params, headers: headers }
 
-    let(:class_instance) { instance_double(CourseServices::Create, { params: params, user: user }) }
+    let(:class_instance) { instance_double(CourseServices::Create, params: params, user: user) }
     let(:mailer_instance) { instance_double(ActionMailer::MessageDelivery) }
     let(:user) { create(:user) }
     let(:category) { create(:category) }

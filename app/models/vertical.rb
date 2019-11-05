@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class Vertical < ApplicationRecord
   has_many :categories, dependent: :destroy
 
-  validates_presence_of :name
+  validates :name, presence: true
   validates_with NameValidator
 end
