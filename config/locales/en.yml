@@ -38,3 +38,6 @@ en:
       forbidden: "Forbidden"
       record_owner: "You need to be the owner of this record"
       user_authenticated: "You need to be authenticated"
+  mailers:
+    notification_mailer:
+      course_created: "New course has just been created."

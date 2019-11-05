@@ -14,7 +14,12 @@ module API
           authorize Course, :create?
 
           result = CourseServices::Create.new(declared(params), current_user).call
-          result.success? ? result : return_errors(result.data)
+          if result.success?
+            NotificationMailer.course_created.deliver_later
+            result
+          else
+            return_errors(result.data)
+          end
         end
       end
     end

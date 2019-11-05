@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :category do
     vertical
-    name { 'Beauty & Fitness' }
+    name { Faker::Name.name }
     state { 'active' }
   end
 end

@@ -9,6 +9,7 @@ RSpec.describe API::V1::Courses::Create, type: :request do
     subject { post '/api/v1/courses', params: params, headers: headers }
 
     let(:class_instance) { instance_double(CourseServices::Create, { params: params, user: user }) }
+    let(:mailer_instance) { instance_double(ActionMailer::MessageDelivery) }
     let(:user) { create(:user) }
     let(:category) { create(:category) }
     let(:params) do
@@ -21,7 +22,10 @@ RSpec.describe API::V1::Courses::Create, type: :request do
 
     before do
       allow(CourseServices::Create).to receive(:new).with(params, user).and_return(class_instance)
+      allow(NotificationMailer).to receive(:course_created).and_return(mailer_instance)
+
       allow(class_instance).to receive(:call).and_return(Result::Success.new(nil, nil))
+      allow(mailer_instance).to receive(:deliver_later)
     end
 
     context 'when all params are valid' do
@@ -29,6 +33,11 @@ RSpec.describe API::V1::Courses::Create, type: :request do
 
       it 'calls CourseServices::Create' do
         expect(class_instance).to receive(:call)
+        subject
+      end
+
+      it 'calls enqueues NotificationMailer.course_created' do
+        expect(mailer_instance).to receive(:deliver_later)
         subject
       end
     end
