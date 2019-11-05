@@ -44,4 +44,10 @@ courses.each do |course|
   Course.create!(name: course['Name'], author: User.find_by(display_name: course['Author']), category_id: course['Categories'], state: course['State'])
 end
 
+puts '---- Create Sample User' ----
+User.create(email: 'test@test.com', display_name: 'JohnCena991', password: '123123', password_confirmation: '123123')
+
 puts '---- Seeds completed ----'
+puts 'Please login with sample user'
+puts 'login: test@test.com'
+password '123123'
